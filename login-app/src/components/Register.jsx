@@ -2,9 +2,10 @@ import { useState } from "react";
 import "./Login.css";
 
 export default function Register({ onSwitchToLogin }) {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [nicNumber, setNicNumber] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
@@ -27,14 +28,14 @@ export default function Register({ onSwitchToLogin }) {
     setLoading(true);
 
     try {
-      console.log("Sending registration request:", { email, password });
+      console.log("Sending registration request:", { username, password, nicNumber });
       
       const response = await fetch("http://localhost:8080/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password, nicNumber }),
       });
 
       console.log("Response status:", response.status);
@@ -43,9 +44,10 @@ export default function Register({ onSwitchToLogin }) {
 
       if (response.ok) {
         setSuccess("Registration successful! You can now login.");
-        setEmail("");
+        setUsername("");
         setPassword("");
         setConfirmPassword("");
+        setNicNumber("");
         setTimeout(() => {
           if (onSwitchToLogin) onSwitchToLogin();
         }, 2000);
@@ -71,18 +73,16 @@ export default function Register({ onSwitchToLogin }) {
 
         <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <span className="icon">✉</span>
             <input
-              type="email"
-              placeholder="Email id"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
 
           <div className="input-group">
-            <span className="icon">🔒</span>
             <input
               type="password"
               placeholder="Password"
@@ -93,12 +93,21 @@ export default function Register({ onSwitchToLogin }) {
           </div>
 
           <div className="input-group">
-            <span className="icon">🔒</span>
             <input
               type="password"
               placeholder="Confirm Password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="input-group">
+            <input
+              type="text"
+              placeholder="NIC Number"
+              value={nicNumber}
+              onChange={(e) => setNicNumber(e.target.value)}
               required
             />
           </div>
@@ -118,3 +127,4 @@ export default function Register({ onSwitchToLogin }) {
     </div>
   );
 }
+
