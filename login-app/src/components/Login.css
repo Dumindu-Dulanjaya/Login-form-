@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0a0a0a;
+  padding: 20px;
+}
+
+.login-box {
+  width: 400px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #6c5ce7;
+}
+
+.forgot-link {
+  display: block;
+  text-align: left;
+  color: #6c5ce7;
+  font-size: 13px;
+  text-decoration: none;
+  margin-bottom: 25px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #5f4dd1;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.register-text {
+  margin-top: 20px;
+  color: #666;
+  font-size: 13px;
+}
+
+.register-text a {
+  color: #6c5ce7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+/* Error and Success Messages */
+.error-message {
+  background: #ffe6e6;
+  color: #d32f2f;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #ffcccc;
+}
+
+.success-message {
+  background: #e6f7ed;
+  color: #2e7d32;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #b3e6c5;
+}
+
+/* Validation Error for Input Fields */
+.validation-error {
+  color: #d32f2f;
+  font-size: 12px;
+  text-align: left;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  padding-left: 15px;
+}
+
+.input-error {
+  border-color: #d32f2f !important;
+  background-color: #fff5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-box {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  input {
+    padding: 12px 12px 12px 40px;
+  }
+
+  button {
+    padding: 12px;
+  }
+}
+

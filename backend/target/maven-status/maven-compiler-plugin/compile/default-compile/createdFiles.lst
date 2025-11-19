@@ -1,0 +1,6 @@
+com\example\loginapp\model\User.class
+com\example\loginapp\repository\UserRepository.class
+com\example\loginapp\LoginAppApplication.class
+com\example\loginapp\controller\AuthController.class
+com\example\loginapp\dto\LoginRequest.class
+com\example\loginapp\dto\LoginResponse.class
